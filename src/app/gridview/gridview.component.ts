@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { PrimeNGConfig } from 'primeng/api';
 import { SelectItem } from 'primeng/api/selectitem';
 import {CarouselModule} from 'primeng/carousel';
+import { VideoService } from '../video.service';
 
 @Component({
   selector: 'app-gridview',
@@ -14,21 +15,16 @@ export class GridviewComponent {
     {label: 'Price High to Low', value: '!price'},
     {label: 'Price Low to High', value: 'price'}
 ];
-  public videos : any[] = ["1", "2", "3", "4", "5","1", "2", "3", "4", "5","1", "2", "3", "4", "5","1", "2", "3", "4", "5","1", "2", "3", "4", "5"];
+  public videos : any[] = [];
 
   public sortOrder: number = 1;
 
   public sortField: string = "";
   public sortKey: string = "";
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+    private videoService: VideoService) { }
   ngOnInit() {
-    this.videos = this.videos.map((video)=>{
-     return {id: Math.floor(Math.random() * 1000000),
-        title: "my title",
-        user: "anonymous",
-        views: Math.floor(Math.random() * 1000000)
-      }
-    });
+    this.videoService.getVideos().subscribe((data => this.videos = data));
 }
 onClickHandler(){
   this.router.navigate(['viewer']);

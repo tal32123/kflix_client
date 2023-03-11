@@ -12,6 +12,7 @@ import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
 import { RippleModule } from 'primeng/ripple';
 import { ViewerComponent } from './viewer/viewer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ViewerComponent } from './viewer/viewer.component';
     CarouselModule,
     ImageModule,
     FormsModule,
+    HttpClientModule,
     DropdownModule
   ],
   providers: [],
