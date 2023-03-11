@@ -1,11 +1,10 @@
-
 <div class="card">
-    <p-dataView #dv [value]="videos" [paginator]="true" [rows]="9" filterBy="name"
-        [sortField]="sortField" [sortOrder]="sortOrder" layout="list">
+    <p-dataView #dv [value]="videos" [paginator]="true" [rows]="9" filterBy="name" [sortField]="sortField"
+        [sortOrder]="sortOrder" layout="list">
         <ng-template let-video pTemplate="listItem">
             <div class="col-12">
-                <div class="video-list-item" (click)="onClickHandler()">
-                    <img [src]="'https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg'" [alt]="video"/>
+                <div class="video-list-item" (click)="onClickHandler(video)">
+                    <img [src]="'https://primefaces.org/cdn/primeng/images/galleria/galleria1.jpg'" [alt]="video" />
                     <div class="video-list-detail">
                         <div class="video-name">Title: {{video.title}}</div>
                         <div class="video-description">Uploaded By: {{video.uploadedUsername}}</div>
@@ -13,11 +12,11 @@
                     </div>
                     <div class="video-list-action">
                         <span class="video-price">Views: {{video.views}}</span>
-                        
+
                     </div>
                 </div>
             </div>
         </ng-template>
-  
+
     </p-dataView>
 </div>

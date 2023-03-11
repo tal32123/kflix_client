@@ -7,25 +7,32 @@ import { ThumbnailComponent } from './thumbnail/thumbnail.component';
 import { GridviewComponent } from './gridview/gridview.component';
 import { CarouselModule } from 'primeng/carousel';
 import { ImageModule } from 'primeng/image';
-import {DataViewModule} from 'primeng/dataview';
+import { DataViewModule } from 'primeng/dataview';
 import { DropdownModule } from 'primeng/dropdown';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RippleModule } from 'primeng/ripple';
 import { ViewerComponent } from './viewer/viewer.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FabComponent } from './fab/fab.component';
+import { UploadFormComponent } from './upload-form/upload-form.component';
+import { FileUploadModule } from 'primeng/fileupload';
 
 @NgModule({
   declarations: [
     AppComponent,
     ThumbnailComponent,
     GridviewComponent,
-    ViewerComponent
+    ViewerComponent,
+    FabComponent,
+    UploadFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     DataViewModule,
     RippleModule,
+    ReactiveFormsModule,
+    FileUploadModule,
     CarouselModule,
     ImageModule,
     FormsModule,

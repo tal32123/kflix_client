@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { Component, Input } from '@angular/core';
+import { Router, ActivatedRoute, ParamMap, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -8,5 +8,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./viewer.component.scss']
 })
 export class ViewerComponent {
+  constructor(private readonly router: Router,
+    private route: ActivatedRoute
+  ) {
 
+  }
+  ngOnInit() {
+
+  }
+  @Input() videoUrl = 'http://localhost:3000/videos/stream/1';
 }
