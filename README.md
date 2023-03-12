@@ -1,10 +1,6 @@
 # KflixClient
 todo: 
 - update thumbnail component to be the template for the thumbnails
-- make route params work
-- make video upload work
-- make frontend pull data from backend
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
 
 ## Development server
