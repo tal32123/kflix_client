@@ -17,9 +17,9 @@ export class ViewerComponent {
   ) {
 
   }
-  params : any;
-  id : string = '';
-  videoData :  Video = {};
+  params: any;
+  id: string = '';
+  videoData: Video = {};
   ngOnInit() {
     const params = this.route?.snapshot?.params;
     this.params = params;

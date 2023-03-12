@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {ImageModule} from 'primeng/image';
+import { ImageModule } from 'primeng/image';
 
 @Component({
   selector: 'app-thumbnail',
