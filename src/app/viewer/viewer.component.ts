@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, Input } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap, Route } from '@angular/router';
 import { Observable } from 'rxjs';
+import { STREAM_BASE_URL, VIDEO_METADATA_BASE_URL } from '../shared/urls.consts';
 import { Video } from '../shared/video';
 
 @Component({
@@ -24,9 +25,9 @@ export class ViewerComponent {
     this.params = params;
     this.id = this.params?.id || '1';
 
-    this.videoUrl = `http://localhost:3000/videos/stream/${this.id}`;
+    this.videoUrl = `${STREAM_BASE_URL}${this.id}`;
     //get video data for future (also increases the views for now)
-    this.http.get<Video>(`http://localhost:3000/videos/video/${this.id}`).subscribe(result => this.videoData = result);
+    this.http.get<Video>(`${VIDEO_METADATA_BASE_URL}${this.id}`).subscribe(result => this.videoData = result);
   }
   @Input() videoUrl = '';
 

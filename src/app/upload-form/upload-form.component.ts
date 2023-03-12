@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UPLOAD_VIDEO_URL } from '../shared/urls.consts';
 
 @Component({
   selector: 'app-upload-form',
@@ -29,7 +30,7 @@ export class UploadFormComponent {
     const formData = new FormData();
     formData.append('file', this.myForm?.get(['fileSource'])?.value);
     formData.append('title', this.myForm?.get(['title'])?.value);
-    this.http.post('http://localhost:3000/videos/upload', formData)
+    this.http.post(UPLOAD_VIDEO_URL, formData)
       .subscribe(res => {
         this.router.navigate(['/']);
 
