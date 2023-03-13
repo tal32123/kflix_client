@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { ImageModule } from 'primeng/image';
+import { Video } from '../shared/video';
 
 @Component({
   selector: 'app-thumbnail',
@@ -7,5 +9,10 @@ import { ImageModule } from 'primeng/image';
   styleUrls: ['./thumbnail.component.scss']
 })
 export class ThumbnailComponent {
-  public preview = true;
+  @Input() video : Video= {};
+  constructor(private router: Router){}
+  onClickHandler(video: any) {
+    this.router.navigate(['viewer', { id: video?.id }]);
+  }
+
 }

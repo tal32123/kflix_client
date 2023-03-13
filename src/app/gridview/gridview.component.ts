@@ -24,23 +24,7 @@ export class GridviewComponent {
   public sortOrder: number = 1;
   public sortField: string = "";
   public sortKey: string = "";
-  constructor(private router: Router,
-    private videoService: VideoService) { }
-
-  onClickHandler(video: any) {
-    this.router.navigate(['viewer', { id: video?.id }]);
-  }
-  onSortChange(event: any) {
-    let value = event.value;
-    if (value.indexOf('!') === 0) {
-      this.sortOrder = -1;
-      this.sortField = value.substring(1, value.length);
-    }
-    else {
-      this.sortOrder = 1;
-      this.sortField = value;
-    }
-  }
+  constructor(private videoService: VideoService) { }
 
 
   responsiveOptions = [
